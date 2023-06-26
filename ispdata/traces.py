@@ -38,16 +38,4 @@ def _dataframe_generator(zipfilepath: str):
     """
     with zipfile.ZipFile(zipfilepath) as zfile:
         for zipname in zfile.namelist():
-            yield zipname, extract_to_dataframe(zfile, zipname)    
-
-def re_names(zipname: str, discard=-2):
-    filename = zipname.split("/")[-1]
-    fragments = filename.split("_")
-    return ("_".join(fragments[:discard]))
-
-def wide_format_generator(zipfilepath: str, discard=-2):
-    for zipname, df in _dataframe_generator(zipfilepath=zipfilepath):
-        name = re_names(zipname, discard=discard)
-        print(name)
-        df = parse(df, value_name=name)
-        yield df[df.index.year==2025].sort_index()
+            yield zipname, extract_to_dataframe(zfile, zipname)

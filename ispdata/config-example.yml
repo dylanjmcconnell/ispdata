@@ -1,0 +1,20 @@
+user_agent: 
+source_data_dir: /path/to/dir/for/downloaded/data
+refomated_data_dir: /path/to/dir/for/reformatted/data
+
+aemo_datasets:
+  2022-final:
+    trace-data:
+      solar: https://aemo.com.au/-/media/files/major-publications/isp/2022/2022-documents/2022-isp-solar-traces.zip
+      wind: https://aemo.com.au/-/media/files/major-publications/isp/2022/2022-documents/2022-isp-wind-traces.zip
+      model: https://aemo.com.au/-/media/files/major-publications/isp/2022/2022-documents/2022-isp-model.zip
+    workbook: https://aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/inputs-assumptions-methodologies/2020/2020-inputs-and-assumptions-workbook-dec20.xlsx
+    
+  2022-draft:
+    trace-data:
+      regional_demand:
+        - https://aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/inputs-assumptions-methodologies/2022/nsw_step_change_poe10.zip
+        - https://aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/inputs-assumptions-methodologies/2022/nsw_step_change_poe50.zip
+
+
+

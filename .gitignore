@@ -1,4 +1,6 @@
 ispdata/config.yml
+.env-example
+.python-version
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

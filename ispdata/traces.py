@@ -1,4 +1,5 @@
 from io import BytesIO
+import re
 import zipfile
 import pandas as pd 
 import datetime
@@ -34,8 +35,10 @@ def extract_to_dataframe(zfile: zipfile.ZipFile, zipname: str):
     
 def _dataframe_generator(zipfilepath: str):
     """
-    Generator that yields all files in zipfile as dataframes
+    Generator that yields all csv files in zipfile as dataframes
     """
     with zipfile.ZipFile(zipfilepath) as zfile:
         for zipname in zfile.namelist():
-            yield zipname, extract_to_dataframe(zfile, zipname)
+            pattern = re.compile("(?i).*\.csv")
+            if re.match(pattern, zipname):
+                yield zipname, extract_to_dataframe(zfile, zipname)

@@ -28,3 +28,6 @@ So far this has been built with `pipenv` on linux with python version 3.11.4. If
 
 You'll need to creata a `config.yml` in the `ispdata` directory (copy from the `config-example.yml` as approproiate). Basically needs you to elect a directory to download raw AEMO data to, and an other to store the processed / parsed data. 
 
+###
+
+p.s. this is extremely extremely pre-alpha so subject to lots of change
